@@ -1,15 +1,14 @@
 package hardcorequesting.blocks;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 import hardcorequesting.items.ItemBlockPortal;
 import hardcorequesting.items.ModItems;
 import hardcorequesting.tileentity.TileEntityBarrel;
 import hardcorequesting.tileentity.TileEntityPortal;
 import hardcorequesting.tileentity.TileEntityTracker;
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class ModBlocks {
     public static Block itemBarrel;
@@ -35,11 +34,11 @@ public class ModBlocks {
     }
 
     public static void registerRecipes() {
-        GameRegistry.addRecipe(new ItemStack(ModBlocks.itemBarrel),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.itemBarrel),
                 "wgw",
                 "gqg",
                 "wgw",
-                'w', Blocks.planks, 'q', ModItems.book.setContainerItem(ModItems.book), 'g', Blocks.glass);
+                'w', "plankWood", 'q', ModItems.book.setContainerItem(ModItems.book), 'g', "blockGlassColorless"));
     }
 
 
